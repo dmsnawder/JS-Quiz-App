@@ -1,0 +1,31 @@
+.tab-pane {
+    max-width: 450px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.quizArea {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff;
+    -webkit-box-shadow: 2px 2px 5px #001a1a;
+    -moz-box-shadow: 2px 2px 5px #001a1a;
+    box-shadow: 2px 2px 5px #001a1a;
+}
+
+.card4 {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff;
+    -webkit-box-shadow: 2px 2px 5px #001a1a;
+    -moz-box-shadow: 2px 2px 5px #001a1a;
+    box-shadow: 2px 2px 5px #001a1a;
+}
+
+.radio {
+    display: inline-block;
+    padding: 20px;
+    line-height: 30px;
+    font-size: 18px;
+}
+

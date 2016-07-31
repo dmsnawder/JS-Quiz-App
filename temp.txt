@@ -1,0 +1,69 @@
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 id="header"><span class="glyphicon glyphicon-grain"></span><small>
+                    Quiz Place Thing</small></h2>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active"><a href="#tab-home" data-toggle="tab">
+                        <span class="glyphicon glyphicon-home"></span></a>
+                    </li>
+
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Take a Quiz
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#tab1" data-toggle="tab">Quiz 1</a></li>
+                            <li><a href="#" data-toggle="tab">Quiz 2 (Nothing yet)</a></li>
+                            <li><a href="#" data-toggle="tab">Quiz 3 (Nothing yet)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+<h2 style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">
+                                How many pancakes do you think I can eat?
+                            </h2>
+                            <p><input type="radio" name="card0" value="All of them."/> All of them.</p>
+                            <p><input type="radio" name="card0" value="Just one."/> Just one.</p>
+                            <p><input type="radio" name="card0" value="Like a short stack or something."/>
+                                Like a short stack or something.</p>
+                            <p><input type="radio" name="card0" value="Trick question, they're waffles."/>
+                                Trick question, they're waffles.</p>
+
+
+
+                        <div class="card1">
+                            <h2 style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">
+                                In the show Firefly, what is the name of the main ship?
+                            </h2>
+                            <p><input type="radio" name="card1" value="Firefly"/> Firefly</p>
+                            <p><input type="radio" name="card1" value="Star Cruiser"/> Star Cruiser</p>
+                            <p><input type="radio" name="card1" value="Serenity"/> Serenity</p>
+                            <p><input type="radio" name="card1" value="Trick question, it's a movie."/>
+                                Trick question, it's a movie.</p>
+                        </div>
+
+                        <div class="card2">
+                            <h2 style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">
+                                Books.
+                            </h2>
+                            <p><input type="radio" name="card2" value="Ehh."/> Ehh.</p>
+                            <p><input type="radio" name="card2" value="Mmmm"/> Mmmm</p>
+                            <p><input type="radio" name="card2" value="CDs...What are we doing?"/> CDs...What are we doing?</p>
+                            <p><input type="radio" name="card2" value="Ehh!"/> Ehh!</p>
+                        </div>
+
+                        <div class="card3">
+                            <h2 style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">
+                                Who was the original drummer for the band Toto?
+                            </h2>
+                            <p><input type="radio" name="card3" value="Mike Portnoy"/> Mike Portnoy</p>
+                            <p><input type="radio" name="card3" value="Jeff Porcaro"/> Jeff Porcaro</p>
+                            <p><input type="radio" name="card3" value="Griffin Goldsmith"/> Griffin Goldsmith</p>
+                            <p><input type="radio" name="card3" value="Me"/> Me</p>
+                        </div>
