@@ -4,7 +4,7 @@
     margin: 20px auto;
 }
 
-.quizArea {
+.quizArea1, .quizArea2, .logInArea {
     padding: 20px;
     margin: 20px auto;
     background-color: #fff;
@@ -13,7 +13,7 @@
     box-shadow: 2px 2px 5px #001a1a;
 }
 
-.score {
+.score1, .score2{
     padding: 20px;
     margin: 20px auto;
     background-color: #fff;
@@ -28,4 +28,3 @@
     line-height: 30px;
     font-size: 18px;
 }
-

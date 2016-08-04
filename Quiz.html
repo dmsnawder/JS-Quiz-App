@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quiz</title>
+    <title>The Quiz Palace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+    <script type="text/javascript" src="CookieUtil.js"></script>
+    <script type="text/javascript" src="EventUtil.js"></script>
 
 </head>
 <body role="document" style="background-color: cadetblue">
@@ -15,27 +21,28 @@
         <!-- Navigation tabs -->
         <div class="row">
             <div class="col-md-12">
-                <h2 id="header"><span class="glyphicon glyphicon-leaf"></span><small>
-                    Quiz Place Thing</small></h2>
-                <ul class="nav nav-tabs" role="tablist">
-
-                    <li role="presentation" class="active"><a href="#tab-home" data-toggle="tab">
-                        <span class="glyphicon glyphicon-home"></span></a>
+                <h2 id="header"><span class="glyphicon glyphicon-leaf"></span>
+                    <small>The Quiz Palace</small>
+                </h2>
+                <ul class="nav nav-tabs" role="tablist" id="myTabs">
+                    <li role="presentation" class="active">
+                        <a href="#tab-home" data-toggle="tab">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
                     </li>
 
                     <li role="presentation" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Take a Quiz
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#tab1" data-toggle="tab">Quiz 1</a></li>
-                            <li><a href="#" data-toggle="tab">Quiz 2 (Nothing yet)</a></li>
-                            <li><a href="#" data-toggle="tab">Quiz 3 (Nothing yet)</a></li>
+                            <li id="tab1"><a href="#tab-1" data-toggle="tab">Quiz 1</a></li>
+                            <li id="tab2"><a href="#tab-2" data-toggle="tab">Quiz 2</a></li>
+                            <li id="tab3"><a href="#tab-3" data-toggle="tab">Quiz 3 (Nothing yet)</a></li>
                         </ul>
                     </li>
-                    <li class="pull-right"><a href="#"><span class="glyphicon glyphicon-user"></span>
-                        Sign Up</a></li>
-                    <li class="pull-right"><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-                        Login</a></li>
+                    <li class="pull-right">
+                        <a href="#log-in" data-toggle="tab"><span class="glyphicon glyphicon-log-in"></span> Log In/Sign Up</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -43,7 +50,7 @@
 
         <!-- Tab Content -->
         <div class="tab-content" id="questions">
-
+            <p class="pull-right">Log in to save your scores!</p>
             <!-- Home Tab content -->
             <div class="tab-pane active" id="tab-home">
                 <div class="row">
@@ -52,6 +59,15 @@
                             <div class="panel-heading">About</div>
                             <div class="panel-body">
                                 <p>This is a web application I built to help learn web development.</p>
+                                <p>It uses:</p>
+                                <ul>
+                                    <li>HTML/CSS</li>
+                                    <li>Bootstrap</li>
+                                    <li>JavaScript</li>
+                                    <li>jQuery</li>
+                                    <li>Handlebars.js</li>
+                                    <li>Cookies</li>
+                                </ul>
                                 <p>Choose a quiz from the drop-down menu above.<br>Good luck!</p>
                             </div>
                         </div>
@@ -60,43 +76,93 @@
             </div>
 
             <!-- Quizzes Tab content -->
-            <div class="tab-pane" id="tab1">
+            <div class="tab-pane" id="tab-1">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1 id="quizName" style="margin-top: 100px; color: #fff" align="center">Quiz</h1>
-                        <div class="quizArea">
-                            <div class="question">
+                        <h1 id="quizName1" style="margin-top: 100px; color: #fff" align="center">Quiz</h1>
+                        <div class="quizArea1">
+                            <div class="question1">
                             </div>
                         </div>
 
-
-                        <div class="score">
-                            <h2 id="done" style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">
+                        <div class="score1">
+                            <h2 id="done1" style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">
                             Placeholder text.</h2>
                         </div>
 
                         <div class="progress">
-                            <div id="progressBar" class="progress-bar progress-bar-striped active" role="progressbar"
+                            <div id="progressBar1" class="progress-bar progress-bar-striped active" role="progressbar"
                                  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
                                  style="width: 0%; min-width: 3%">
                             </div>
                         </div>
 
-                        <button id="back" class="btn">Previous</button>
-                        <button id="next" class="btn pull-right">Next</button>
-                        <button id="retry" class="btn">Restart?</button>
+                        <button id="back1" class="btn">Previous</button>
+                        <button id="next1" class="btn pull-right">Next</button>
+                        <button id="retry1" class="btn">Restart?</button>
                     </div>
                 </div>
             </div>
+
+            <div class="tab-pane" id="tab-2">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 id="quizName2" style="margin-top: 100px; color: #fff" align="center">Quiz</h1>
+                        <div class="quizArea2">
+                            <div class="question2">
+                            </div>
+                        </div>
+
+                        <div class="score2">
+                            <h2 id="done2" style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">
+                                Placeholder text.</h2>
+                        </div>
+
+                        <div class="progress">
+                            <div id="progressBar2" class="progress-bar progress-bar-striped active" role="progressbar"
+                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                 style="width: 0%; min-width: 3%">
+                            </div>
+                        </div>
+
+                        <button id="back2" class="btn">Previous</button>
+                        <button id="next2" class="btn pull-right">Next</button>
+                        <button id="retry2" class="btn">Restart?</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="log-in">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="logInArea">
+                            <h3>Log In</h3>
+                            <br/>
+                            <form id="nameForm" class="form-inline">
+                                <div id="welcome">
+                                    <div id="message" class="alert alert-info"></div>
+                                    <input type="text" id="name" name="name" style="font-size: 16px">
+                                    <button id="addName" type="button">Go!</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script id="qtn-template" type="text/x-handlebars-template">
+        <h2 style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">{{theQuestion}}</h2>
+        {{#each choices}}
+        <p><input type="radio" name="question" value="{{this}}"/>{{this}}</p>
+        {{/each}}
+    </script>
 
-    <script type="text/javascript" src="quiz1.json"></script>
-    <script type="text/javascript" src="quiz.js"></script> 
+    <script type="text/javascript" src="quizquestions.js"></script>
+    <script type="text/javascript" src="quiz.js"></script>
+
 </body>
 </html>

@@ -20,58 +20,80 @@ var theQuestions = [{
   choices: ["Mike Portnoy","Jeff Porcaro","Griffin Goldsmith","Me"],
   answer: 1
 }
-]
-*/
+]; */
 
 $(document).ready(function() {
 
-    Quiz("quiz1.json");
+    var message = document.getElementById('message');
+    var myCookie = CookieUtil.get('name');
+    var nameInput = document.getElementById('name');
+    var addNameButton = document.getElementById('addName');
 
-    function Quiz(quizData) {
+    if (myCookie) {
+        nameInput.value = myCookie;
+    }
+
+    Welcome();
+
+    EventUtil.addHandler(nameInput, 'focus', function(event) {
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+        target.value = "";
+    });
+
+    function Welcome() {
+        if (myCookie) {
+           message.innerHTML = "Hi " + myCookie + ", if this is not you, please enter your name below!";
+        }
+        else {
+            message.innerHTML = "Please enter your name: ";
+        }
+    }
+
+    function addUserName() {
+        if (nameInput.value !== "") {
+            myCookie = nameInput.value;
+            CookieUtil.set('name', myCookie);
+
+            $('#myTabs a[href="#tab-home"]').trigger('click');
+        }
+        else {
+            window.alert("Please enter a name");
+        }
+    }
+
+    EventUtil.addHandler(addNameButton, 'click', function(event) {
+        addUserName();
+    });
+
+
+    Quiz(quiz1, 1);
+    Quiz(quiz2, 2);
+
+    function Quiz(quizData, num) {
 
         var val = "",
             score = 0,
             questionIndex = 0,
             userChoices = [],
-            theQuestions;
+            theQuestions = quizData;
 
-        var question = $('.question'),
-            next = $('#next'),
-            back = $('#back'),
-            retry = $('#retry'),
-            progressBar = $('#progressBar'),
+        var question = $('.question' + num),
+            next = $('#next' + num),
+            back = $('#back' + num),
+            retry = $('#retry' + num),
+            progressBar = $('#progressBar' + num),
             radioButton = $('input:radio');
 
-        $('.score').hide();
+        $('.score' + num).hide();
         retry.hide();
         back.hide();
 
-        // Get quiz data from separate JSON file and assign it to object 'theQuestions'
-        $.ajax(quizData, {
-            success: function(response) {
-                theQuestions = response;
-                displayQuestion();
-            },
-            error: function(request, errorType, errorMessage) {
-                window.alert('Error: ' + errorType + ' with response ' + errorMessage);
-            },
-            timeout: 3000
-        });
+        var quizNameText = document.createTextNode("Quiz " + num);
+        var quizName = document.getElementById('quizName' + num);
+        quizName.replaceChild(quizNameText, quizName.childNodes[0]);
 
-
-        function displayQuestion() {
-            question.fadeIn("slow");
-
-            question.append('<h2 style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" ' +
-                'align="center">' + theQuestions[questionIndex].theQuestion + '</h2>');
-
-            for (var i=0, len=theQuestions[questionIndex].choices.length; i < len; i++) {
-                question.append('<p><input type=\'radio\' name=\'card0\' value="' +
-                    theQuestions[questionIndex].choices[i] + '"/>' +
-                    theQuestions[questionIndex].choices[i] + '</p>');
-            }
-
-        }
+        displayQuestion();
 
         next.click(function () {
             var checkedRadioButton = $('input:radio:checked');
@@ -82,7 +104,6 @@ $(document).ready(function() {
             else {
                 val = checkedRadioButton.val();
                 userChoices[questionIndex] = val;
-
                 if (questionIndex < theQuestions.length-1) {
 
                     if (questionIndex === 0) {
@@ -105,7 +126,7 @@ $(document).ready(function() {
 
                     setTimeout(function() {
                         clearQuestion();
-                        $('.quizArea').hide();
+                        $('.quizArea' + num).hide();
                         questionIndex++;
                         moveProgress();
                         next.hide();
@@ -137,14 +158,13 @@ $(document).ready(function() {
                 if (questionIndex === 0) {
                     back.hide();
                 }
-
             }, 500);
 
         });
 
         retry.click(function() {
-            $('.score').hide();
-            $('.quizArea').show();
+            $('.score' + num).hide();
+            $('.quizArea' + num).show();
             next.show();
             retry.hide();
             radioButton.prop("checked", false);
@@ -154,6 +174,15 @@ $(document).ready(function() {
             moveProgress();
             displayQuestion();
         });
+
+        function displayQuestion() {
+
+            var theTemplateScript = $("#qtn-template").html();
+            var theTemplate = Handlebars.compile(theTemplateScript);
+            question.append(theTemplate(theQuestions[questionIndex]));
+
+            question.fadeIn("slow");
+        }
 
         function clearQuestion() {
             question.empty();
@@ -166,7 +195,7 @@ $(document).ready(function() {
         }
 
         function displayScore() {
-            $('.score').show();
+            $('.score' + num).show();
 
             for (var i=0, len=theQuestions.length; i < len; i++) {
                 if (userChoices[i] === theQuestions[i].choices[theQuestions[i].answer]) {
@@ -177,7 +206,7 @@ $(document).ready(function() {
             var endText = document.createTextNode("You finished the quiz! You got " +
                 score + " out of " + theQuestions.length + " questions correct!");
 
-            var done = document.getElementById('done');
+            var done = document.getElementById('done' + num);
 
             done.replaceChild(endText, done.childNodes[0]);
         }
