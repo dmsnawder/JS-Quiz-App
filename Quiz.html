@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <title>The Quiz Palace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="handlebars-v4.0.5.js"></script>
     <script type="text/javascript" src="CookieUtil.js"></script>
     <script type="text/javascript" src="EventUtil.js"></script>
-
 </head>
 <body role="document" style="background-color: cadetblue">
 
@@ -25,7 +26,7 @@
                     <small>The Quiz Palace</small>
                 </h2>
                 <ul class="nav nav-tabs" role="tablist" id="myTabs">
-                    <li role="presentation" class="active">
+                    <li role="presentation">
                         <a href="#tab-home" data-toggle="tab">
                             <span class="glyphicon glyphicon-home"></span>
                         </a>
@@ -37,10 +38,10 @@
                         <ul class="dropdown-menu">
                             <li id="tab1"><a href="#tab-1" data-toggle="tab">Quiz 1</a></li>
                             <li id="tab2"><a href="#tab-2" data-toggle="tab">Quiz 2</a></li>
-                            <li id="tab3"><a href="#tab-3" data-toggle="tab">Quiz 3 (Nothing yet)</a></li>
+                            <li id="tab3"><a href="#tab-3" data-toggle="tab">Quiz 3</a></li>
                         </ul>
                     </li>
-                    <li class="pull-right">
+                    <li class="pull-right active">
                         <a href="#log-in" data-toggle="tab"><span class="glyphicon glyphicon-log-in"></span> Log In/Sign Up</a>
                     </li>
                 </ul>
@@ -50,9 +51,10 @@
 
         <!-- Tab Content -->
         <div class="tab-content" id="questions">
-            <p class="pull-right">Log in to save your scores!</p>
+            <!--<p id="loginmessage" class="pull-right">Log in to save your scores!</p>-->
+
             <!-- Home Tab content -->
-            <div class="tab-pane active" id="tab-home">
+            <div class="tab-pane" id="tab-home">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="panel panel-info">
@@ -75,7 +77,7 @@
                 </div>
             </div>
 
-            <!-- Quizzes Tab content -->
+            <!-- Quiz 1 Tab content -->
             <div class="tab-pane" id="tab-1">
                 <div class="row">
                     <div class="col-sm-12">
@@ -104,6 +106,7 @@
                 </div>
             </div>
 
+            <!-- Quiz 2 Tab Content -->
             <div class="tab-pane" id="tab-2">
                 <div class="row">
                     <div class="col-sm-12">
@@ -132,7 +135,37 @@
                 </div>
             </div>
 
-            <div class="tab-pane" id="log-in">
+            <!-- Quiz 3 Tab Content -->
+            <div class="tab-pane" id="tab-3">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 id="quizName3" style="margin-top: 100px; color: #fff" align="center">Quiz</h1>
+                        <div class="quizArea3">
+                            <div class="question3">
+                            </div>
+                        </div>
+
+                        <div class="score3">
+                            <h2 id="done3" style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">
+                                Placeholder text.</h2>
+                        </div>
+
+                        <div class="progress">
+                            <div id="progressBar3" class="progress-bar progress-bar-striped active" role="progressbar"
+                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                 style="width: 0%; min-width: 3%">
+                            </div>
+                        </div>
+
+                        <button id="back3" class="btn">Previous</button>
+                        <button id="next3" class="btn pull-right">Next</button>
+                        <button id="retry3" class="btn">Restart?</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Log In Tab Content -->
+            <div class="tab-pane active" id="log-in">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="logInArea">
@@ -153,7 +186,7 @@
         </div>
     </div>
 
-
+    <!-- Handlebars.js script for displaying quiz questions and choices -->
     <script id="qtn-template" type="text/x-handlebars-template">
         <h2 style="margin-top: 20px; margin-bottom: 40px; color: darkslategray" align="center">{{theQuestion}}</h2>
         {{#each choices}}

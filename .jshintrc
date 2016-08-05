@@ -1,0 +1,8 @@
+{
+  "globals": {
+    "CookieUtil": true,
+    "EventUtil": true,
+    "quiz1": true,
+    "quiz2": true
+  }
+}

@@ -1,0 +1,66 @@
+body {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.header {
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.header, .navbar-custom {
+    background-color: #2C3E50;
+}
+
+h2 {
+    color: white;
+}
+
+.navbar-custom {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+}
+
+.navbar-custom a {
+    background-color: #1b2631;
+}
+
+.navbar-custom a:focus {
+    outline: none;
+}
+
+.navbar-custom .navbar-nav li a {
+    color: white;
+}
+
+.tab-pane {
+    max-width: 1050px;
+    padding: 20px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.home-text .name {
+    display: block;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 2em;
+}
+.home-text .about {
+    font-size: 1.25em;
+    font-weight: 300;
+}
+
+.tab-pane .content-title {
+    display: block;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 2.25em;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

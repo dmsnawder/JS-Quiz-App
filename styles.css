@@ -4,7 +4,7 @@
     margin: 20px auto;
 }
 
-.quizArea1, .quizArea2, .logInArea {
+.quizArea1, .quizArea2, .quizArea3, .logInArea {
     padding: 20px;
     margin: 20px auto;
     background-color: #fff;
@@ -13,7 +13,7 @@
     box-shadow: 2px 2px 5px #001a1a;
 }
 
-.score1, .score2{
+.score1, .score2, .score3 {
     padding: 20px;
     margin: 20px auto;
     background-color: #fff;
