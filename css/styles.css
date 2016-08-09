@@ -28,3 +28,7 @@
     line-height: 30px;
     font-size: 18px;
 }
+
+#myTabs li a {
+    color: #00325c;
+}

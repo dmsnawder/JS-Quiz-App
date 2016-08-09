@@ -1,3 +1,5 @@
+/** This code comes from the book Professional JavaScript for Web Developers by Nicholas C. Zakas **/
+
 var EventUtil = {
 
     addHandler: function(element, type, handler){

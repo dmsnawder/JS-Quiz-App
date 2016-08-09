@@ -9,31 +9,30 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="bootstrap-social-gh-pages/assets/css/font-awesome.css" rel="stylesheet">
+    <link href="bootstrap-social-gh-pages/bootstrap-social.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="indexstyles.css">
+    <link rel="stylesheet" type="text/css" href="css/indexstyles.css">
 </head>
 <body>
 
-    <div class="container">
+    <div class="header">
         <div class="row">
-            <div class="col-md-12">
-                <div class="header">
-                    <h2>David Snawder</h2>
-                    <nav class="navbar navbar-default navbar-custom">
+            <div class="container">
+                <div class="col-md-6">
+                    <h2>DAVID SNAWDER</h2>
+                </div>
+                <div class="col-md-6">
+                    <nav class="navbar navbar-default navbar-right navbar-custom">
                         <ul class="nav navbar-nav" role="tablist" id="myTabs">
-                            <li role="presentation" class="active">
-                                <a href="#tab-home" data-toggle="tab">
-                                    <span class="glyphicon glyphicon-home"></span>
-                                </a>
+                            <li role="presentation">
+                                <a href="#tab-home" data-toggle="tab">Home</a>
                             </li>
-                            <li id="tab2"><a href="#portfolio" data-toggle="tab">Portfolio</a></li>
+                            <li id="tab2" class="active"><a href="#portfolio" data-toggle="tab">Portfolio</a></li>
                             <li id="tab3"><a href="#contact" data-toggle="tab">Contact</a></li>
                         </ul>
                     </nav>
@@ -42,42 +41,57 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
+
+    <div class="row">
+        <div class="container">
             <div class="col-md-12">
                 <div class="tab-content">
 
-                    <div class="tab-pane active" id="tab-home">
+                    <div class="tab-pane" id="tab-home">
                         <div class="row">
-                            <div class="col-md-6 home-text">
+                            <div class="col-md-8 home-text">
                                 <span class="name">About Me</span>
                                 <hr>
-                                <span class="about">Hi, I'm David Snawder! I recently graduated college
+                                <span class="about">Hi, I'm David! I recently graduated college
                                     in May 2016 with a BS in Computer Science, and currently reside in Arlington, TX.
-                                    I have been learning web development on my own as I search for work.</span>
+                                    I have been learning web development on my own as I job hunt.
+                                </span>
+                                <br/><br/>
                             </div>
+
+                            <ul id="icons">
+                                <li><a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/DavidMSnawder">
+                                    <span class="fa fa-linkedin"></span></a></li>
+                                <li><a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/david.snawder">
+                                    <span class="fa fa-facebook"></span></a></li>
+                                <li><a class="btn btn-social-icon btn-github" href="https://github.com/dmsnawder">
+                                    <span class="fa fa-github"></span></a></li>
+                            </ul>
+
                         </div>
                     </div>
 
-                    <div class="tab-pane" id="portfolio">
+                    <div class="tab-pane active" id="portfolio">
                         <div class="project">
-                            <div class="row">
-                                <div class="content-title">Portfolio</div>
-                                <hr>
-                                <div class="col-md-6">
-                                    <a href="Quiz.html"><img src="images/quiz-app-screenshot.png"></a>
+                            <div class="content-title">Portfolio</div>
+                            <hr>
+                            <div class="row portfolio-item">
+                                <div class="col-md-6 portfolio-col screenshot">
+                                    <a href="quiz.html"><img src="images/quiz-app-screenshot.png"></a>
                                 </div>
-                                <div class="col-md-6 home-text">
+                                <div class="col-md-6 portfolio-col description">
                                     <span class="name">Quiz App</span>
-                                    <hr>
+
                                     <span class="about">I made this web application while learning JavaScript
-                                    through an online study guide called
+                                        through an online study guide called
                                         <a href="http://javascriptissexy.com/how-to-learn-javascript-properly/#more-53">
                                             How To Learn JavaScript Properly
                                         </a>. It uses HTML/CSS, Bootstrap, JavaScript, jQuery, Handlebars.js, and cookies.
                                     </span>
                                 </div>
                             </div>
+                            <br/><br/><br/>
+
                         </div>
                     </div>
 
@@ -85,6 +99,24 @@
             </div>
         </div>
     </div>
+
+    <div id="footer">
+        <div class="row">
+            <div class="container">
+                <div class="col-md-12">
+                    <ul id="footer-text">
+                        <li>&copy; 2016</li>
+                        <li>Contact me: dmsnawder@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>
