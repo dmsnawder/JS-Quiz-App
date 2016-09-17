@@ -18,22 +18,21 @@
 
     <link rel="stylesheet" type="text/css" href="css/indexstyles.css">
 </head>
-<body>
+<body style="background-color: #1a1a1a">
 
     <div class="header">
         <div class="row">
             <div class="container">
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <h2>DAVID SNAWDER</h2>
                 </div>
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <nav class="navbar navbar-default navbar-right navbar-custom">
                         <ul class="nav navbar-nav" role="tablist" id="myTabs">
-                            <li role="presentation">
-                                <a href="#tab-home" data-toggle="tab">Home</a>
+                            <li class="active" role="presentation">
+                                <a href="#portfolio" data-toggle="tab">Portfolio</a>
                             </li>
-                            <li id="tab2" class="active"><a href="#portfolio" data-toggle="tab">Portfolio</a></li>
-                            <li id="tab3"><a href="#contact" data-toggle="tab">Contact</a></li>
+                            <li id="tab2"><a href="#tab-about" data-toggle="tab">About &amp; Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -44,53 +43,92 @@
 
     <div class="row">
         <div class="container">
-            <div class="col-md-12">
+            <div class="col-sm-12">
                 <div class="tab-content">
-
-                    <div class="tab-pane" id="tab-home">
-                        <div class="row">
-                            <div class="col-md-8 home-text">
-                                <span class="name">About Me</span>
-                                <hr>
-                                <span class="about">Hi, I'm David! I recently graduated college
-                                    in May 2016 with a BS in Computer Science, and currently reside in Arlington, TX.
-                                    I have been learning web development on my own as I job hunt.
-                                </span>
-                                <br/><br/>
-                            </div>
-
-                            <ul id="icons">
-                                <li><a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/DavidMSnawder">
-                                    <span class="fa fa-linkedin"></span></a></li>
-                                <li><a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/david.snawder">
-                                    <span class="fa fa-facebook"></span></a></li>
-                                <li><a class="btn btn-social-icon btn-github" href="https://github.com/dmsnawder">
-                                    <span class="fa fa-github"></span></a></li>
-                            </ul>
-
-                        </div>
-                    </div>
 
                     <div class="tab-pane active" id="portfolio">
                         <div class="project">
                             <div class="content-title">Portfolio</div>
+
                             <hr>
                             <div class="row portfolio-item">
-                                <div class="col-md-6 portfolio-col screenshot">
+                                <div class="col-sm-6 portfolio-col screenshot">
+                                    <a href="towerdefensegame.html"><img src="images/TowerDefenseGame-screenshot.png"></a>
+                                </div>
+                                <div class="col-sm-6 portfolio-col description">
+                                    <span class="name">Nightmares of Claire: Tower Defense</span>
+
+                                    <span class="about"><b>Nightmares of Claire</b> is a Tower Defense game I made in about 
+                                        a month. Claire's dreams have become nightmares after strange shadows have 
+                                        begun emerging from her closet each night to torment her as she sleeps. The player must 
+                                        take control of her guardians and keep the shadows from reaching her until 6 AM each night.
+                                        There are 6 nights to survive on currently 4 different levels of varying difficulty.
+                                        <br>
+                                        Click the screenshot to play the game! (NOTE: Chrome no longer supports Unity Web Player. 
+                                        Any other browser should work fine.)
+                                        <br><br>
+                                        Technologies used: Unity Engine, C#, .NET, Photoshop.
+                                        <br><br>
+                                        Development date: August-September 2016
+                                    </span>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="row portfolio-item">
+                                <div class="col-sm-6 portfolio-col screenshot">
                                     <a href="quiz.html"><img src="images/quiz-app-screenshot.png"></a>
                                 </div>
-                                <div class="col-md-6 portfolio-col description">
+                                <div class="col-sm-6 portfolio-col description">
                                     <span class="name">Quiz App</span>
 
                                     <span class="about">I made this web application while learning JavaScript
                                         through an online study guide called
                                         <a href="http://javascriptissexy.com/how-to-learn-javascript-properly/#more-53">
                                             How To Learn JavaScript Properly
-                                        </a>. It uses HTML/CSS, Bootstrap, JavaScript, jQuery, Handlebars.js, and cookies.
+                                        </a>. 
+                                        <br><br>
+                                        Technologies used: HTML/CSS, Bootstrap, JavaScript, jQuery, Handlebars.js, and cookies.
+                                        <br><br>
+                                        Development date: July 2016
                                     </span>
                                 </div>
                             </div>
-                            <br/><br/><br/>
+ 
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tab-about">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="home-text">
+                                    <div id="header1" class="portrait"><img src="images/myFace.jpg"></div>
+                                    <span class="name">Welcome!</span>
+                                    <hr>
+                                    <span class="about">Hi, I'm David. I recently graduated from University
+                                        in May 2016 with a BS in Computer Science, and currently live in Arlington, TX.
+                                        I have a passion for video games, music, and coding.
+                                        <br><br>
+                                        Since graduation I have been teaching myself web development and game development 
+                                        and working on personal projects while I job hunt. 
+                                        You can see what I've made so far in the <b>Portfolio</b> tab.
+                                        <br><br>
+                                        This website is a work in progress.
+                                        <br><br>
+                                        Get in touch with me at <a href="mailto:dmsnawder@gmail.com">dmsnawder@gmail.com</a>
+                                    </span>
+                                    <br/><br/>
+
+                                    <ul id="icons">
+                                        <li><a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/DavidMSnawder">
+                                            <span class="fa fa-linkedin"></span></a></li>
+                                        <li><a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/david.snawder">
+                                            <span class="fa fa-facebook"></span></a></li>
+                                        <li><a class="btn btn-social-icon btn-github" href="https://github.com/dmsnawder">
+                                            <span class="fa fa-github"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -103,11 +141,23 @@
     <div id="footer">
         <div class="row">
             <div class="container">
-                <div class="col-md-12">
-                    <ul id="footer-text">
-                        <li>&copy; 2016</li>
-                        <li>Contact me: dmsnawder@gmail.com</li>
-                    </ul>
+                <div class="col-sm-12">
+                    <div class="col-sm-6">
+                        <ul id="footer-icons">
+                            <li><a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/DavidMSnawder">
+                                <span class="fa fa-linkedin"></span></a></li>
+                            <li><a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/david.snawder">
+                                <span class="fa fa-facebook"></span></a></li>
+                            <li><a class="btn btn-social-icon btn-github" href="https://github.com/dmsnawder">
+                                <span class="fa fa-github"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul id="footer-text">
+                            <li>&copy; 2016</li>
+                            <li><a href="mailto:dmsnawder@gmail.com">dmsnawder@gmail.com</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
