@@ -86,9 +86,9 @@ $(document).ready(function() {
         back.hide();
 
         //display appropriate quiz title on page
-        var quizNameText = document.createTextNode("Quiz " + num);
-        var quizName = document.getElementById('quizName' + num);
-        quizName.replaceChild(quizNameText, quizName.childNodes[0]);
+        //var quizNameText = document.createTextNode("Quiz " + num);
+        //var quizName = document.getElementById('quizName' + num);
+        //quizName.replaceChild(quizNameText, quizName.childNodes[0]);
 
         displayQuestion();
 
